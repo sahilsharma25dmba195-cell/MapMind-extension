@@ -8,8 +8,8 @@ Instead of passively reading articles, MapMind helps you **extract, structure, a
 
 ## 🧑‍💻 Installation
 
-1. Download the code as Zip or Clone this repository 
-2. Go to your browser’s extensions page
+1. Download the code as Zip (and extract) or Clone this repository 
+2. Go to your browser’s manage extensions page
 3. Enable **Developer Mode**
 4. Click **Load Unpacked**
 5. Select this folder (mapmind-extension)
@@ -50,6 +50,11 @@ Perfect for:
 5. Import them into your map
 
 That’s it — your knowledge is now **organized, searchable, and connected**.
+
+## How to set it up 
+This extension requires an AI API key to function. It works with OpenAI, Groq (free tier available), Perplexity, or Google Gemini. Your key is stored locally in your browser only — never sent to MapMind's servers.
+
+**Groq offers a free API tier with no payment required — get your key at console.groq.com/keys**
 
 ---
 
