@@ -6,7 +6,7 @@ const VALID_REGIONS = [
   "Global",
   "North America",
   "South America",
-  "Europe",
+  "Rest of Europe",
   "Asia",
   "Africa",
   "Middle East",
