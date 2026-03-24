@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapMind Importer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <section class="panel">
+        <header class="panel-header">
+          <div class="brand-lockup">
+            <img class="brand-logo" src="assets/logo-mark.svg" alt="MapMind logo" />
+            <div>
+              <div class="brand">MapMind</div>
+              <div class="subtitle">Note Importer</div>
+            </div>
+          </div>
+          <button
+            id="settingsToggle"
+            class="icon-button hidden"
+            type="button"
+            aria-label="Open settings"
+          >
+            ⚙
+          </button>
+        </header>
+
+        <section id="setupState" class="state hidden">
+          <div class="state-copy">
+            <h1 class="state-title">Set up your importer</h1>
+            <p class="state-subtitle">
+              Save your AI provider and API key once to start turning any page into MapMind notes.
+            </p>
+          </div>
+
+          <label class="input-label" for="setupProvider">Choose your AI provider</label>
+          <select id="setupProvider" class="text-input provider-select">
+            <option value="openai" class="provider-option provider-option-openai">● OpenAI</option>
+            <option value="groq" class="provider-option provider-option-groq">● Groq</option>
+            <option value="perplexity" class="provider-option provider-option-perplexity">● Perplexity</option>
+            <option value="gemini" class="provider-option provider-option-gemini">● Google Gemini</option>
+          </select>
+
+          <p id="setupProviderHelper" class="helper-text provider-helper">
+            Get your key at platform.openai.com — requires credits
+          </p>
+
+          <label id="setupApiKeyLabel" class="input-label" for="setupApiKey">Enter your OpenAI API key</label>
+          <input
+            id="setupApiKey"
+            class="text-input"
+            type="password"
+            placeholder="sk-..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+
+          <p class="helper-text">
+            Your key is stored locally in your browser only. Never sent anywhere except your selected AI provider.
+          </p>
+
+          <button id="setupSaveButton" class="primary-button" type="button">
+            Save &amp; Continue
+          </button>
+
+          <a
+            id="setupProviderLink"
+            class="inline-link centered-link"
+            href="https://platform.openai.com/api-keys"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Get your API key at platform.openai.com
+          </a>
+        </section>
+
+        <section id="readyState" class="state hidden">
+          <div class="state-copy">
+            <p class="eyebrow">Current page</p>
+            <p id="pageTitle" class="page-title">Loading page title...</p>
+          </div>
+
+          <button id="extractButton" class="primary-button" type="button">
+            Extract &amp; Import to MapMind
+          </button>
+
+          <p class="helper-text">
+            Extracts this page's content and converts it into MapMind notes
+          </p>
+        </section>
+
+        <section id="loadingState" class="state hidden">
+          <div class="status-icon spinner" aria-hidden="true"></div>
+          <div class="state-copy centered-copy">
+            <h1 id="loadingTitle" class="state-title">Extracting article...</h1>
+            <p class="state-subtitle">This usually takes 5-10 seconds</p>
+          </div>
+
+          <button class="primary-button" type="button" disabled>Please wait...</button>
+        </section>
+
+        <section id="successState" class="state hidden">
+          <div class="status-icon success-icon" aria-hidden="true">✓</div>
+          <div class="state-copy centered-copy">
+            <h1 class="state-title">Notes ready to import!</h1>
+            <p id="successSubtext" class="state-subtitle">0 notes extracted from this article</p>
+          </div>
+
+          <button id="openImportButton" class="primary-button" type="button">
+            Open MapMind Import →
+          </button>
+          <button id="extractAnotherButton" class="ghost-button" type="button">
+            Extract another page
+          </button>
+        </section>
+
+        <section id="errorState" class="state hidden">
+          <div class="status-icon error-icon" aria-hidden="true">✕</div>
+          <div class="state-copy centered-copy">
+            <h1 class="state-title">Something went wrong</h1>
+            <p id="errorMessage" class="state-subtitle error-message">Please try again.</p>
+          </div>
+
+          <button id="retryButton" class="primary-button" type="button">Try again</button>
+          <button id="errorActionButton" class="inline-link hidden" type="button">
+            Check your API key
+          </button>
+        </section>
+
+        <section id="settingsState" class="state hidden">
+          <div class="state-copy">
+            <h1 class="state-title">Settings</h1>
+            <p class="state-subtitle">Update your AI provider and API key whenever you need to.</p>
+          </div>
+
+          <label class="input-label" for="settingsProvider">Choose your AI provider</label>
+          <select id="settingsProvider" class="text-input provider-select">
+            <option value="openai" class="provider-option provider-option-openai">● OpenAI</option>
+            <option value="groq" class="provider-option provider-option-groq">● Groq</option>
+            <option value="perplexity" class="provider-option provider-option-perplexity">● Perplexity</option>
+            <option value="gemini" class="provider-option provider-option-gemini">● Google Gemini</option>
+          </select>
+
+          <p id="settingsProviderHelper" class="helper-text provider-helper">
+            Get your key at platform.openai.com — requires credits
+          </p>
+
+          <label id="settingsApiKeyLabel" class="input-label" for="settingsApiKey">OpenAI API key</label>
+          <input
+            id="settingsApiKey"
+            class="text-input"
+            type="password"
+            placeholder="sk-..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+
+          <div class="button-row">
+            <button id="settingsSaveButton" class="primary-button" type="button">Save</button>
+            <button id="settingsBackButton" class="ghost-button" type="button">Back</button>
+          </div>
+
+          <p class="helper-text version-text">Extension version 1.0.0</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
