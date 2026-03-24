@@ -6,6 +6,14 @@ Instead of passively reading articles, MapMind helps you **extract, structure, a
 
 ---
 
+## 🧑‍💻 Installation
+
+1. Download the code as Zip or Clone this repository 
+2. Go to your browser’s extensions page
+3. Enable **Developer Mode**
+4. Click **Load Unpacked**
+5. Select this folder (mapmind-extension)
+
 ## 🚀 What It Does
 
 With one click, MapMind:
@@ -81,16 +89,6 @@ We’re building a system where information is:
 * Structured
 * Easy to revisit
 * Easy to think with
-
----
-
-## 🧑‍💻 Installation
-
-1. Download the code as Zip or Clone this repository 
-2. Go to your browser’s extensions page
-3. Enable **Developer Mode**
-4. Click **Load Unpacked**
-5. Select this folder
 
 
 ---
