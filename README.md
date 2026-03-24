@@ -86,18 +86,12 @@ We’re building a system where information is:
 
 ## 🧑‍💻 Installation
 
-1. Clone this repository
+1. Download the code as Zip or Clone this repository 
 2. Go to your browser’s extensions page
 3. Enable **Developer Mode**
 4. Click **Load Unpacked**
 5. Select this folder
 
----
-
-## 🤝 Contributing
-
-Contributions, ideas, and feedback are welcome.
-If you believe knowledge should be better organized — you’re in the right place.
 
 ---
 
@@ -106,10 +100,4 @@ If you believe knowledge should be better organized — you’re in the right pl
 If you use MapMind, I’d love to hear your thoughts.
 This is just the beginning.
 
----
 
-If you want, I can also:
-
-* Create a **more viral README (for GitHub growth)**
-* Add **badges, visuals, and GIF demo ideas**
-* Or tailor it for **Reddit launch strategy (non-spammy)** 🚀
